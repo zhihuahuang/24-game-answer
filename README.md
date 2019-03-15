@@ -1,12 +1,14 @@
-# 24 Point
+# 24 Game Answer
 
-24-point game answers
+24 game answers.😜
+
+[Rules](https://en.wikipedia.org/wiki/24_Game)|[规则](https://zh.wikipedia.org/wiki/24%E7%82%B9)
 
 Number: `1` - `13`
 
 ## Answer
 
-| Number1 | Number2 | Number3 | Number4 | Answers             |
+| Number1 | Number2 | Number3 | Number4 | Answer              |
 | ------- | ------- | ------- | ------- | ------------------- |
 | 1       | 1       | 9       | 13      | 1 + 1 + 9 + 13      |
 | 1       | 1       | 10      | 12      | 1 + 1 + 10 + 12     |
