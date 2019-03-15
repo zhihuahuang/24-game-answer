@@ -2,7 +2,7 @@
 
 24 game answers.😜
 
-[Rules](https://en.wikipedia.org/wiki/24_Game)|[规则](https://zh.wikipedia.org/wiki/24%E7%82%B9)
+[Rules](https://en.wikipedia.org/wiki/24_Game) | [规则](https://zh.wikipedia.org/wiki/24%E7%82%B9)
 
 Number: `1` - `13`
 
