@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title>24 Game Answer</title>
+    <style>
+        .title {
+            text-align: center;
+        }
+
+        .number {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .input-number {
+            width: 36px;
+            height: 36px;
+            margin: 8px;
+            border: 1px solid #CCC;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            width: 100%;
+            height: 36px;
+            color: #FFF;
+            background: #1F92FF;
+            border: 0;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">24 Game Answer</h1>
+    <form class="form">
+        <div class="number">
+            <input class="input-number" type="number" min="1" max="13" required>
+            <input class="input-number" type="number" min="1" max="13" required>
+            <input class="input-number" type="number" min="1" max="13" required>
+            <input class="input-number" type="number" min="1" max="13" required>
+        </div>
+        <button class="submit-btn">Get Answer</button>
+    </form>
+    <div></div>
+    <script src="./calc.min.js"></script>
+    <script>
+        (function () {
+            document.addEventListener('submit', () => {
+
+            });
+
+            console.log(calc);
+            //Array.prototype.forEach.call(document.querySelectorAll('.input-number'), el => {
+            //    el.addEventListener('invalid', () => setCustomValidity('Please Enter number 1-13.'));
+            //});
+        }());
+    </script>
+</body>
+</html>
