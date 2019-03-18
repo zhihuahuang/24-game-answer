@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <title>24 Game Answer</title>
     <style>
+        body {
+            font-family: sans-serif;
+        }
+
         .title {
             text-align: center;
         }
@@ -29,6 +33,10 @@
             border-radius: 4px;
             font-size: 24px;
             text-align: center;
+        }
+
+        input[type="number"] {
+            -webkit-appearance: none;
         }
 
         input::-webkit-outer-spin-button,
@@ -90,11 +98,11 @@
 
                 output.removeAttribute('hidden');
                 if (exp) {
-                    output.textContent = exp;
+                    output.textContent = `${exp} 😜`;
                     output.classList.remove('error');
                 }
                 else {
-                    output.textContent = 'No Result';
+                    output.textContent = 'No Result. 😭';
                     output.classList.add('error');
                 }
 
