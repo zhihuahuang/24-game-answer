@@ -9,6 +9,12 @@
             text-align: center;
         }
 
+        .desc {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
         .number {
             display: flex;
             justify-content: space-between;
@@ -39,6 +45,7 @@
             border: 0;
             border-radius: 4px;
             outline: 0;
+            font-size: 18px;
         }
 
         .submit-btn:active {
@@ -52,18 +59,20 @@
             text-align: center;
             background: #EEE;
             color: #777;
+            font-size: 18px;
         }
 
     </style>
 </head>
 <body>
     <h1 class="title">24 Game Answer</h1>
+    <p class="desc">Number: 1-13</p>
     <form class="form">
         <div class="number">
-            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
-            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
-            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
-            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="\d*" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="\d*" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="\d*" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="\d*" required>
         </div>
         <button class="submit-btn">Get Answer</button>
     </form>
