@@ -25,11 +25,26 @@
 
         .submit-btn {
             width: 100%;
-            height: 36px;
+            height: 42px;
+            margin-top: 10px;
             color: #FFF;
             background: #1F92FF;
             border: 0;
             border-radius: 4px;
+            outline: 0;
+        }
+
+        .submit-btn:active {
+            opacity: 0.8;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            background: #EEE;
+            color: #777;
         }
 
     </style>
@@ -45,18 +60,29 @@
         </div>
         <button class="submit-btn">Get Answer</button>
     </form>
-    <div></div>
+    <div id="output" hidden></div>
     <script src="./calc.min.js"></script>
     <script>
         (function () {
-            document.addEventListener('submit', () => {
+            let output = document.getElementById('output');
+
+            document.addEventListener('submit', event => {
+                event.preventDefault();
+
+                let nums = Array.from(document.querySelectorAll('.input-number')).map(el => +el.value).sort();
+                let exp = calc(nums, 24);
+
+                output.removeAttribute('hidden');
+                if (exp) {
+                    output.textContent = exp;
+                    output.classList.remove('error');
+                }
+                else {
+                    output.textContent = 'No Result';
+                    output.classList.add('error');
+                }
 
             });
-
-            console.log(calc);
-            //Array.prototype.forEach.call(document.querySelectorAll('.input-number'), el => {
-            //    el.addEventListener('invalid', () => setCustomValidity('Please Enter number 1-13.'));
-            //});
         }());
     </script>
 </body>
