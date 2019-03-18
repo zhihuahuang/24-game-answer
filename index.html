@@ -17,10 +17,17 @@
         .input-number {
             width: 36px;
             height: 36px;
+            padding: 0;
             margin: 8px;
             border: 1px solid #CCC;
             border-radius: 4px;
+            font-size: 24px;
             text-align: center;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none !important;
         }
 
         .submit-btn {
@@ -53,10 +60,10 @@
     <h1 class="title">24 Game Answer</h1>
     <form class="form">
         <div class="number">
-            <input class="input-number" type="number" min="1" max="13" required>
-            <input class="input-number" type="number" min="1" max="13" required>
-            <input class="input-number" type="number" min="1" max="13" required>
-            <input class="input-number" type="number" min="1" max="13" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
+            <input class="input-number" type="number" min="1" max="13" pattern="[1-9]|1[0-3]" required>
         </div>
         <button class="submit-btn">Get Answer</button>
     </form>
