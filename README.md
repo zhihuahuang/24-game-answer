@@ -6,6 +6,10 @@
 
 Number: `1` - `13`
 
+[Play~](https://zhihuahuang.github.io/24-game-answer/)
+
+Calc Method: [calc.js](https://github.com/zhihuahuang/24-game-answer/blob/master/calc.js)
+
 ## Answer
 
 | Number1 | Number2 | Number3 | Number4 | Answers                 |
