@@ -1,5 +1,7 @@
 const Decimal = require('decimal.js-light');
 
+const ExpNode = require('./exp-node');
+
 let solution = new Map(); // 利用 Map 去存储解
 
 /**
@@ -28,8 +30,7 @@ function calc(nums, result) {
             let [a, b] = nums;
 
             if (a.add(b).eq(result)) {
-                exp = `(${a} + ${b})`; // 可以通过加（+）得到
-                break;
+                return new ExpNode(a, '+', b); // 可以通过加（+）得到
             }
 
             if (a.lt(b)) {
@@ -37,19 +38,19 @@ function calc(nums, result) {
             }
 
             if (a.sub(b).eq(result)) {
-                return `(${a} - ${b})`; // 可以通过减（-）得到
+                return new ExpNode(a, '-', b);
             }
 
             if (a.mul(b).eq(result)) {
-                return `${a} * ${b}`;
+                return new ExpNode(a, '*', b);
             }
 
             if (a.div(b).eq(result)) {
-                return `${a} / ${b}`;
+                return new ExpNode(a, '/', b);
             }
 
             if (b.div(a).eq(result)) {
-                return `${b} / ${a}`;
+                return new ExpNode(b, '/', a);
             }
 
             solution.set(key, false);
@@ -66,7 +67,7 @@ function calc(nums, result) {
                 if (n.lt(result)) {
                     exp = calc(other, result.sub(n));
                     if (exp) {
-                        return `(${n} + ${exp})`;
+                        return new ExpNode(n, '+', exp);
                     }
                 }
 
@@ -74,31 +75,31 @@ function calc(nums, result) {
                 if (n.gt(result)) {
                     exp = calc(other, n.sub(result));
                     if (exp) {
-                        return `(${n} - ${exp})`;
+                        return new ExpNode(n, '-', exp);
                     }
                 }
                 else {
                     exp = calc(other, n.add(result));
                     if (exp) {
-                        return `(${exp} - ${n})`;
+                        return new ExpNode(exp, '-', n);
                     }
                 }
 
                 // n * other = result
                 exp = calc(other, result.div(n));
                 if (exp) {
-                    return `${exp} * ${n}`;
+                    return new ExpNode(exp, '*', n);
                 }
 
                 // n / other = result OR other / n = result
                 exp = calc(other, n.div(result));
                 if (exp) {
-                    return `${n} / ${exp}`;
+                    return new ExpNode(n, '/', exp);
                 }
 
                 exp = calc(other, n.mul(result));
                 if (exp) {
-                    return `${exp} / ${n}`
+                    return new ExpNode(exp, '/', n);
                 }
             }
 

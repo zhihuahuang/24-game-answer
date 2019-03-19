@@ -2,18 +2,18 @@
   "name": "24-game-answer",
   "version": "1.0.0",
   "description": "24 game answers.",
-  "main": "index.js",
+  "main": "src/calc.js",
   "private": true,
   "dependencies": {
     "decimal.js-light": "^2.5.0"
   },
   "devDependencies": {
-    "debug": "^4.1.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
   "scripts": {
-    "build": "npx webpack calc.js --mode production --output-library calc --output-library-target umd -o calc.min.js"
+    "build": "npx webpack static/index.js --mode production -o static/index.min.js",
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/zhihuahuang/24-game-answer/issues"
   },
-  "homepage": "https://github.com/zhihuahuang/24Point#readme"
+  "homepage": "https://zhihuahuang.github.io/24-game-answer"
 }
